@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>工具申请</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>名称</th>
+			<th>种类</th>
+			<th>状态</th>
+		</tr>
+	</thead>
+	<tbody>
+	<!-- num -> num of tools -->
+	{% for i in range(length) %}
+		<tr>
+			<td>{{TID[i]}}</td>
+			<td>{{Tname[i]}}</td>
+			<td>{{Ttype[i]}}</td>
+			<td>{{Tstate[i]}}</td>
+		</tr>
+	{% endfor %}	
+	</tbody>
+</table>
+
+<form action="" method="post">
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>租借请求</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		<tr>
+			<td><input type="text" name="TID"></td>
+			<td><input type="submit" value="申请"></td>
+		</tr>
+		{% if accuracy == 0 %}
+		<script type="text/javascript">
+			alert("请求失败，请重新输入工具编号");
+		</script>
+		{% endif %}
+	</tbody>
+</table>
+</form>
+
+
+</body>
+</html>

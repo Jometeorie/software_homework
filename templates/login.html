@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>ETMS</title>
+<script type="text/javascript">
+	window.onload=function(){
+    var box_hight;  
+    var box_width; 
+    var con=document.getElementById("container");
+    //位置赋值
+    con.style.left="50%";
+    con.style.top="50%";
+    box_width=con.offsetWidth;  //获取盒子宽度
+    box_hight=con.offsetHeight;  //获取盒子高度
+    con.style.marginTop=-box_hight/2+"px";
+    con.style.marginLeft=-box_width/2+"px";
+}
+</script>
+
+<style type="text/css">
+	html,body,div,form,input,span,a{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url('../images/bg.png');
+    font-size: 0.75em;
+    background-color: #3bc0c3;
+}
+#container{
+    /*width: 440px;*/
+    width: 33%;
+    height: 310px;
+    border: 5px solid #32a3a6;
+    position: absolute;
+}
+#container .logo{
+    width: 100%;
+    height: 55px;
+    background: #f8fbfb;
+    text-align: center;
+    line-height: 55px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #484848;
+    border-bottom: 1px solid #eff4f4;
+}
+#container form{
+    width: 81.818181812%;
+    margin: 20px auto;
+    color: #e2e2e2;
+}
+#container .public-input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #e2e2e2;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+#container form input[type="text"],
+#container form input[type="password"]{
+    width: 90%;
+    height: 100%;
+    border: none;
+}
+#container .username{
+    background: url("../images/userpw-icon.png") no-repeat center left;
+    background-position: 3px 8px;
+    background-color: #fff;
+}
+#container form input[name="username"]{
+    padding-left: 38px;
+}
+#container .password{
+    background: url("../images/userpw-icon.png") no-repeat center left;
+    background-position: 3px -54px;
+    background-color: #fff;
+}
+#container form input[name="password"]{
+    padding-left: 38px;
+}
+#container .public-input input.has-border:focus{
+  border-color: #484848;
+  box-shadow: 0 0 10px #484848;
+  -webkit-box-shadow: 0 0 10px #484848;
+  -moz-box-shadow: 0 0 10px #484848;
+}
+#container .btnLogin{
+    border: none;
+    background: #3bc0c3;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+#container .register input{
+    vertical-align:middle;
+    margin-bottom: 6px;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+        <div class="login">
+            <div class="logo">员工与工具信息管理系统</div>
+            <form action="" method="post" >
+                <div class="public-input">
+                    <input class="username has-border" name="username" type="text" placeholder="请输入用户名">
+                </div>	
+                <div class="public-input ">
+                    <input class="password has-border" name="password" type="password" placeholder="请输入密码">
+                </div>
+
+                <input class="btn public-input" type="submit" value="登录">
+                 {% if answer == 0 %}
+				 <script type="text/javascript">
+				   alert("密码错误");
+				 </script>
+				 {% endif %}
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+

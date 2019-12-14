@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>工具信息</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>租借编号</th>
+			<th>租借时间</th>
+			<th>员工编号</th>
+			<th>工具编号</th>
+		</tr>
+	</thead>
+		<tbody>
+	<!-- num -> num of tools -->
+	{% for i in range(length) %}
+		<tr>
+			<td>{{LID[i]}}</td>
+			<td>{{Ltime[i]}}</td>
+			<td>{{EID[i]}}</td>
+			<td>{{TID[i]}}</td>
+		</tr>
+	{% endfor %}	
+	</tbody>
+</table>
+<form action="" method="post">
+<div style="text-align:center;">
+<input type="submit" value="返回" name="back" class="btn btn-info">
+</div>
+</form>
+
+</body>
+</html>

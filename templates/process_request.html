@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>员工信息维护</title>
+	<link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+	<link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.7.0.css">
+	<style type="text/css">
+.box {
+	width: 20px;
+	height: 20px;
+	padding: 2px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+</style>
+	</head>
+	<body>
+<h1 style="text-align: center">租借请求处理</h1>
+<div class="container">
+      <div class="row">
+    <div class="col-md-12" style="padding:2em 0;">
+          <div class="table-responsive">
+        <form action="" method="post">
+        <table class="table table-bordered table-striped" id="mytable">
+          <thead>
+            <tr>
+                  <td>员工姓名</td>
+				  <td>员工编号</td>
+                  <td>工具编号</td>
+                  <td>工具名称</td>
+                  <td>请求时间</td>
+                  <td>许可</td>
+                  <td>拒绝</td>
+            </tr>
+          </thead>
+		  {% if length!=0  %}
+          <tbody>
+            <tr>
+            <td><input type="text" name="Ename"value={{Ename[0]}} readonly></td>
+			<td><input type="text" name="EID"value={{EID[0]}} readonly></td>
+            <td><input type="text" name="TID"value={{TID[0]}} readonly></td>
+            <td><input type="text" name="Tname"value={{Tname[0]}} readonly></td>
+            <td><input type="text" name="Rtime"value={{Rtime[0]}} readonly></td>
+            <td><input class="btn btn-info" type="submit" value="许可" name="state"></td>
+            <td><input class="btn btn-info" type="submit" value="拒绝" name="state"></td>
+            </tr>
+          </tbody>
+		  {% endif %}
+          </form>
+        
+        {% for i in range(length-1) %}
+        <form action="" method="post">
+        <table class="table table-bordered table-striped" id="mytable">
+        <tbody>
+        <tr>
+            <td><input type="text" name="Ename"value={{Ename[i+1]}} readonly></td>
+			<td><input type="text" name="EID"value={{EID[i+1]}} readonly></td>
+            <td><input type="text" name="TID"value={{TID[i+1]}} readonly></td>
+            <td><input type="text" name="Tname"value={{Tname[i+1]}} readonly></td>
+            <td><input type="text" name="Rtime"value={{Rtime[i+1]}} readonly></td>
+            <td><input class="btn btn-info" type="submit" value="许可" name="state"></td>
+            <td><input class="btn btn-info" type="submit" value="拒绝" name="state"></td>
+        </tr>
+        </tbody>
+        </table> 
+        </form>
+        {% endfor %}
+   
+           </div>
+        </div>
+
+  </div>
+    </div>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/bootstable.js"></script> 
+
+</body>
+</html>
